@@ -1,0 +1,143 @@
+/*Changed background, card colors, fonts, styled modal*/
+ html {
+     box-sizing: border-box;
+}
+ *, *::before, *::after {
+     box-sizing: inherit;
+}
+ html, body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+}
+ body {
+     background: url('../img/riddler.png');
+    /*Source for Background - https://thewallpaper.co/preview/?wallpaper=new-england-patriots-backgrounds-for-desktop-desktop-wallpapers-hd-high-definition-windows-10-mac-apple-colourful-images-backgrounds-free-1920x1080*/
+}
+ .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+ h1 {
+     font-family: "fantasy";
+     font-weight: 700;
+     color: #ffffff;
+}
+/* * Styles for the deck of cards */
+ .deck {
+     width: 660px;
+     min-height: 680px;
+     background: #696969;
+     opacity: 0.8;
+     filter: alpha(opacity=30);
+     padding: 32px;
+     border-radius: 30px;
+     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0 0 3em;
+}
+ .deck .card {
+     height: 105px;
+     width: 125px;
+     background: #ffffff;
+     font-size: 0;
+     color: #ffffff;
+     border-radius: 8px;
+     cursor: grab;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+ .deck .card.open {
+     background: #B22222;
+     cursor: grab;
+}
+
+.deck .card.show {
+    font-size: 45px;
+}
+ .deck .card.match {
+     cursor: grab;
+     background: #191970;
+     font-size: 45px;
+}
+/* * Styles for the Score Panel */
+ .score-panel {
+     text-align: center;
+     width: 400px;
+     margin-bottom: 20px;
+     font-weight: bold;
+     color: #ffffff;
+}
+ .timer {
+     float: left;
+}
+ .stars {
+     position: relative;
+     margin: auto;
+     display: inline-block;
+}
+ .stars li {
+     list-style: none;
+     display: inline-block;
+}
+ .moves {
+     position: relative;
+     margin-left: 20%;
+}
+ .restart {
+     float: right;
+     cursor: pointer;
+     color: #ffffff;
+}
+/*Styles for the Modal*/
+ .modal-background {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.5);
+}
+ .hide {
+     display: none;
+}
+ .modal-content {
+     position: relative;
+     width: 300px;
+     top: 50%;
+     left: 50%;
+     background: #ffffff;
+     transform: translate(-60%, -95%);
+}
+ .modal-header {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-weight: bold;
+     padding: 0 1.5rem;
+     border-bottom: 1px solid black;
+}
+ .modal-scoreboard {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 1rem;
+     border-bottom: 1px solid black;
+}
+ .modal-buttons {
+     display: flex;
+     justify-content: space-around;
+     padding: 1rem;
+}
+ .modal-button {
+     width: 60px;
+     height: 30px;
+}
