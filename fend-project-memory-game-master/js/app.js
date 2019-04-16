@@ -8,8 +8,9 @@ let openedCards = [];
 let moves = 0;
 let timerOff = true;
 let time = 0;
-let matched = 0;
 let timerId;
+let matched = 0;
+
 
 //*Pass shuffle function in newly created array from .card element. Result stored in shuffledCards.*//
 function shuffleDeck() {
@@ -55,9 +56,8 @@ function shuffle(array) {
       openedCards.length < 2 &&
       !openedCards.includes(card)
     ) {
-        if (timerOff) {
+        if (timerOff) {timerOff = false;
           startTimer();
-          timerOff = false;
         }
        flipCard(card);
        addOpenCard(card);
@@ -71,12 +71,11 @@ function shuffle(array) {
 
  //*Function to start timer*//
  function startTimer() {
-    let timerId = setInterval(() => {
+    timerId = setInterval(() => {
          time++;
          showTime();
      }, 1000);
  }
- startTimer()
 
 //Show time using built in Match function to round down decimals and show seconds in correct format.*//
  function showTime() {
@@ -135,7 +134,7 @@ function checkOpenCards() {
 
   //*Function to check score based on how many moves were made and remove star at specified intervals*//
   function checkScore() {
-    if (moves === 7 || moves === 12 || moves === 17){
+    if (moves === 7 || moves === 12){
       loseStar();
     }
   }
@@ -196,6 +195,7 @@ function showModalScoreboard() {
 document.querySelector(".modal_return").addEventListener("click", () => {
   toggleModal();
 });
+
 document.querySelector(".modal_replay").addEventListener("click", replayGame);
 
 //*Function to hide modal and reset Game*//
@@ -204,28 +204,9 @@ function replayGame() {
     toggleModal();
 }
 
-//*Function to reset cards to default, not show*//
-function resetCards() {
-  const cards = document.querySelectorAll(".deck li");
-  for (let card of cards) {card.className = "card";}
-}
-
-//*Function so moves reset and display as 0*//
-function resetMoves() {
-  moves = 0;
-  document.querySelector(".moves").innerHTML = "Moves: " + moves;
-
-}
-
-//*Function so stars reset and display as 3 stars*//
-function resetStars() {
-  for (star of starsAwarded) {
-    star.style.display = "inline";
-  }
-}
 
 //*Calls reset function upon selection of restart class*//
-document.querySelector('.restart').addEventListener('click', resetGame);
+document.querySelector(".restart").addEventListener("click", resetGame);
 
 //*Resets all aspects of game (Moves to 0, time to 00:00, stars to 3) and shuffles deck*//
 function resetGame() {
@@ -243,4 +224,27 @@ function resetTimerandDisplay() {
   timerOff = true;
   time = 0;
   showTime();
+}
+
+
+//*Function so moves reset and display as 0*//
+function resetMoves() {
+  moves = 0;
+  document.querySelector(".moves").innerHTML = "Moves: " + moves;
+
+}
+
+//*Function so stars reset and display as 3 stars*//
+function resetStars() {
+  for (star of starsAwarded) {
+    star.style.display = "inline";
+  }
+}
+
+//*Function to reset cards to default, not show*//
+function resetCards() {
+  const cards = document.querySelectorAll(".deck li");
+  for (let card of cards) {card.className = "card";}
+  openedCards = [];
+  matched = 0;
 }
