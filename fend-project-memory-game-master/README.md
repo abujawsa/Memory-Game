@@ -20,7 +20,6 @@ This repository is the starter code for _all_ Udacity students. Therefore, we mo
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
-
 ## HTML Document
 - Changed Heading to Flash's Matching Game
 - Added DIV classes for modal
@@ -40,6 +39,8 @@ For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 - Styled modal
 
 ## Helpful Resources/Citations used:
+- Peer review
+- Udacity initial review
 - Background:  https://thewallpaper.co/preview/?wallpaper=new-england-patriots-backgrounds-for-desktop-desktop-wallpapers-hd-high-definition-windows-10-mac-apple-colourful-images-backgrounds-free-1920x1080*/
 - Cursors: https://www.w3schools.com/csSref/pr_class_cursor.asp
 - Colors: https://www.w3schools.com/cssref/css_colors.asp
